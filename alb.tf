@@ -16,14 +16,14 @@ module "main-alb" {
   # cert_chain_file_path = var.cert_chain_file_path
 
   web_http_target_group = {
-      name              = "web-http-target-group"
+      name              = "web-prod-http-target-group"
       backend_protocol  = "HTTP"
       backend_port      = 80
       health_check_path = "/index.html"
     }
 
   app_http_target_group = {
-      name              = "app-http-targets-group"
+      name              = "app-prod-http-targets-group"
       backend_protocol  = "HTTP"
       backend_port      = 5000
       health_check_path = "/bigfishserver/"

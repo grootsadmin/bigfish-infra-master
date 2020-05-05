@@ -8,7 +8,7 @@ env = "Prod"
 AWS_REGION = "ap-south-1"
 
 # Mandatory - Name to be used on all resources as prefix
-tags = {"Terraform" = "true"}
+tags = {"Terraform-prod" = "true"}
 
 # CIDR for VPC
 vpc_cidr = "10.0.0.0/16"
@@ -107,7 +107,7 @@ notification_instance_count = 1
 notification_ami =  "ami-0620d12a9cf777c87"
 
 # The type of instance to start
-notification_instance_type = "t2.small"
+notification_instance_type = "t2.medium"
 
 # Suffix to append to instance name
 # notification_instance_suffix = "notification"
@@ -125,7 +125,7 @@ job_instance_count = 1
 job_ami =  "ami-0620d12a9cf777c87"
 
 # The type of instance to start
-job_instance_type = "t2.small"
+job_instance_type = "t2.medium"
 
 # Suffix to append to instance name
 # job_instance_suffix = "notification"

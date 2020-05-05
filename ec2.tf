@@ -15,7 +15,7 @@ module "app-ec2" {
 
   vpc_security_group_ids = module.main-sg.app_sg[*].id
 
-  iam_instance_profile = aws_iam_instance_profile.ec2_monitoring_profile.name
+  iam_instance_profile = aws_iam_instance_profile.ec2_monitoring_profile-prod.name
 
   required_data_partition = false
 
@@ -49,7 +49,7 @@ module "web-ec2" {
 
   vpc_security_group_ids = module.main-sg.web_sg[*].id
 
-  iam_instance_profile = aws_iam_instance_profile.ec2_monitoring_profile.name
+  iam_instance_profile = aws_iam_instance_profile.ec2_monitoring_profile-prod.name
 
   required_data_partition = false
 
@@ -83,7 +83,7 @@ module "notification-ec2" {
 
   vpc_security_group_ids = module.main-sg.notification_sg[*].id
 
-  iam_instance_profile = aws_iam_instance_profile.ec2_monitoring_profile.name
+  iam_instance_profile = aws_iam_instance_profile.ec2_monitoring_profile-prod.name
 
   required_data_partition = false
 
@@ -117,7 +117,7 @@ module "job-ec2" {
 
   vpc_security_group_ids = module.main-sg.job_sg[*].id
 
-  iam_instance_profile = aws_iam_instance_profile.ec2_monitoring_profile.name
+  iam_instance_profile = aws_iam_instance_profile.ec2_monitoring_profile-prod.name
 
   required_data_partition = false
 
@@ -152,7 +152,7 @@ module "captcha-ec2" {
 
   vpc_security_group_ids = module.main-sg.captcha_sg[*].id
 
-  iam_instance_profile = aws_iam_instance_profile.ec2_monitoring_profile.name
+  iam_instance_profile = aws_iam_instance_profile.ec2_monitoring_profile-prod.name
 
   required_data_partition = false
 
@@ -187,7 +187,7 @@ module "jumpserver-ec2" {
 
   vpc_security_group_ids = module.main-sg.jumpserver_sg[*].id
 
-  iam_instance_profile = aws_iam_instance_profile.ec2_monitoring_profile.name
+  iam_instance_profile = aws_iam_instance_profile.ec2_monitoring_profile-prod.name
 
   required_data_partition = false
 
