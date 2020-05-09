@@ -272,7 +272,7 @@ resource "aws_subnet" "rds" {
 resource "aws_db_subnet_group" "rds" {
   count = var.create_vpc && length(var.rds_subnets) > 0 && var.create_rds_subnet_group ? 1 : 0
 
-  name        = "${lower(var.name)}-rds-subnet-group"
+  name        = "${lower(var.name)}-rds-subnet-group-prod"
   description = "rds subnet group for ${var.name}"
   subnet_ids  = aws_subnet.rds[*].id
 

@@ -35,7 +35,7 @@ EOF
 }
 
 resource "aws_iam_instance_profile" "ec2_monitoring_profile-prod" {
-  name = "ec2-monitoring-profile"
+  name = "ec2-monitoring-profile-prod"
   role = aws_iam_role.ec2_iam_role.name
 }
 

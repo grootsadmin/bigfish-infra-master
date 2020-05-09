@@ -52,6 +52,21 @@ module "main-sg" {
       protocol    = "tcp"
       description = "Allow gmetrics monitoring connections from monitoring server"
     },
+    {
+      cidr_blocks = ["13.126.151.121/32"]
+      from_port   = 5671
+      to_port     = 5671
+      protocol    = "tcp"
+      description = "Allow gmetrics monitoring connections from monitoring server"
+    },
+    {
+      cidr_blocks = ["13.126.151.121/32"]
+      from_port   = 5672
+      to_port     = 5672
+      protocol    = "tcp"
+      description = "Allow gmetrics monitoring connections from monitoring server"
+    },
+
   ]
 
   lb_ingress_rules = [
@@ -116,14 +131,12 @@ module "main-sg" {
       description = "Allow web connections from webserver"
     },
      {
-      cidr_blocks = ["10.0.91.189/32"]
+      cidr_blocks = ["10.0.91.254/32"]
       from_port   = 5666
       to_port     = 5666
       protocol    = "tcp"
       description = "Allow gmetrics monitoring connections from jumpserver"
     },
-
-
   ]
 
   rds_ingress_rules = [
@@ -163,7 +176,7 @@ module "main-sg" {
       description = "Allow HTTP connections from JumpServer Resources"
     },
     {
-      cidr_blocks = ["10.0.91.189/32"]
+      cidr_blocks = ["10.0.91.254/32"]
       from_port   = 5666
       to_port     = 5666
       protocol    = "tcp"
@@ -202,7 +215,7 @@ module "main-sg" {
     },
 
     {
-      cidr_blocks = ["10.0.91.189/32"]
+      cidr_blocks = ["10.0.91.254/32"]
       from_port   = 5666
       to_port     = 5666
       protocol    = "tcp"
@@ -226,6 +239,14 @@ module "main-sg" {
       protocol    = "tcp"
       description = "Allow connections from App Subnet"
     },
+    {
+      cidr_blocks = ["10.0.91.254/32"]
+      from_port   = 5666
+      to_port     = 5666
+      protocol    = "tcp"
+      description = "Allow gmetrics monitoring connections from jumpserver"
+    },
+
   ]
 
   captcha_ingress_rules = [
@@ -243,6 +264,14 @@ module "main-sg" {
       protocol    = "tcp"
       description = "Allow connections from App Subnet"
     },
+    {
+      cidr_blocks = ["10.0.91.254/32"]
+      from_port   = 5666
+      to_port     = 5666
+      protocol    = "tcp"
+      description = "Allow gmetrics monitoring connections from jumpserver"
+    },
+
   ]
 
 }
